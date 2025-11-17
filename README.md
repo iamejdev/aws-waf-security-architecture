@@ -12,6 +12,7 @@ The solution utilizes a cloud-native edge security layer to protect a legacy ori
 * **Edge Security (CDN):** AWS CloudFront handles TLS termination, ensuring strict SSL/TLS encryption (TLS 1.2+) closer to the user.
 * **Application Firewall (WAF):** AWS WAFv2 is deployed at the CloudFront edge to inspect incoming traffic against managed rule sets.
 * **Identity & Access Management (PKI):** Public certificates provisioned via AWS Certificate Manager (ACM) to establish a chain of trust.
+  <br>
 ![CloudFront Configuration](Cloudfront-Distribution.jpg)
 ## Security Controls Implemented
 
@@ -25,6 +26,7 @@ To align with **NIST CSF** protection standards, the following AWS Managed Rule 
 * Enforced **HTTPS-Only** policy at the Viewer (Client) level.
 * Configured **HTTP Strict Transport Security (HSTS)** behavior via CloudFront redirects.
 * Rotated legacy SSL certificates to modern ACM-provisioned certificates.
+  <br>
 ![WAF Rules](WAF-ACL-Rules.jpg)
 ## Risk Analysis & Troubleshooting Case Study
 During implementation, I encountered and resolved complex connectivity issues between the modern cloud edge and the legacy origin.
